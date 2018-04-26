@@ -34,11 +34,11 @@ schema1 = {
         'allowed': ["eco", "people", "sight"],
     },
     'longitude':{
-        'type':'double',
+        'type':'string',
         'required': True,
     },
     'latitude':{
-        'type':'double',
+        'type':'string',
         'required': True,
     },
     'description': {
