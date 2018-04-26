@@ -8,7 +8,7 @@ Based on the excellent http://python-eve.org
 ## Server-side
 - In one shell window, start one instance of database: `mongod --dbpath data/db --port 27010`
 - In second shell window, start Flask webserver: `python server.py`
-- Config details- Local: `127.0.0.1`, Remote Google host: `35.229.18.203`
+- Config details- Local: `0.0.0.0`, remote Google Cloud host: `35.229.18.203`
 
 ## Client-side
 ### Requests
