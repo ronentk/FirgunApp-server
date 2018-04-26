@@ -26,41 +26,30 @@ ITEM_METHODS = ['GET', 'PATCH', 'PUT', 'DELETE']
 schema = {
     # Schema definition, based on Cerberus grammar. Check the Cerberus project
     # (https://github.com/pyeve/cerberus) for details.
-    'firstname': {
-        'type': 'string',
-        'minlength': 1,
-        'maxlength': 10,
-    },
-    'lastname': {
-        'type': 'string',
-        'minlength': 1,
-        'maxlength': 15,
-        'required': True,
-        # talk about hard constraints! For the purpose of the demo
-        # 'lastname' is an API entry-point, so we need it to be unique.
-        'unique': True,
-    },
-    # 'role' is a list, and can only contain values from 'allowed'.
-    'role': {
+
+    # 'category' is a list, and can only contain values from 'allowed'.
+    'category': {
         'type': 'list',
-        'allowed': ["author", "contributor", "copy"],
+        'allowed': ["eco", "people", "sight"],
     },
-    # An embedded 'strongly-typed' dictionary.
-    'location': {
-        'type': 'dict',
-        'schema': {
-            'address': {'type': 'string'},
-            'city': {'type': 'string'}
-        },
+    'longitude':{
+        'type':'string',
+        'required': True,
     },
-    'born': {
-        'type': 'datetime',
+    'latitude':{
+        'type':'string',
+        'required': True,
+    },
+    'description': {
+        'type': 'string',
+        'minlength': 0,
+        'maxlength': 15,
+        'required': False,
+        'unique': False,
+    },
+    'date': {
     },
 }
-    
-    
-    
-    
     
 people = {
     # 'title' tag used in item links. Defaults to the resource title minus
@@ -85,8 +74,7 @@ people = {
 
     'schema': schema
 }
-    
-    
+
     
 DOMAIN = {
     'people': people,
