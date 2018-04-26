@@ -23,7 +23,7 @@ RESOURCE_METHODS = ['GET', 'POST', 'DELETE']
 ITEM_METHODS = ['GET', 'PATCH', 'PUT', 'DELETE']
 
 
-schema = {
+schema1 = {
     # Schema definition, based on Cerberus grammar. Check the Cerberus project
     # (https://github.com/pyeve/cerberus) for details.
 
@@ -50,8 +50,37 @@ schema = {
     },
     'date': {
     },
+    'username':{
+        'type': 'string',
+        'minlength': 8,
+        'maxlength':16,
+        'required': True,
+        'unique': True,
+    },
 }
-    
+
+
+schema2 = {
+    'username':{
+        'type': 'string',
+        'minlength': 8,
+        'maxlength':16,
+        'required': True,
+        'unique': True,
+    },
+    'userpic':{
+        'type': 'media'
+    },
+    'longitude':{
+        'type':'string',
+        'required': True,
+    },
+    'latitude':{
+        'type':'string',
+        'required': True,
+    },
+}
+
 firguns = {
     # 'title' tag used in item links. Defaults to the resource title minus
     # the final, plural 's' (works fine in most cases but not for 'people')
@@ -73,10 +102,35 @@ firguns = {
     # most global settings can be overridden at resource level
     'resource_methods': ['GET', 'POST'],
 
-    'schema': schema
+    'schema': schema1
+}
+
+users = {
+    # 'title' tag used in item links. Defaults to the resource title minus
+    # the final, plural 's' (works fine in most cases but not for 'people')
+    'item_title': 'users',
+
+    # by default the standard item entry point is defined as
+    # '/people/<ObjectId>'. We leave it untouched, and we also enable an
+    # additional read-only entry point. This way consumers can also perform
+    # GET requests at '/people/<lastname>'.
+    'additional_lookup': {
+        'url': 'regex("[\w]+")',
+        'field': 'description'
+    },
+
+    # We choose to override global cache-control directives for this resource.
+    'cache_control': 'max-age=10,must-revalidate',
+    'cache_expires': 10,
+
+    # most global settings can be overridden at resource level
+    'resource_methods': ['GET', 'POST', 'PATCH'],
+
+    'schema': schema2
 }
 
     
 DOMAIN = {
     'firguns': firguns,
+    'users': users
 }
