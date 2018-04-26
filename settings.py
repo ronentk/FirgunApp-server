@@ -16,7 +16,7 @@ MONGO_DBNAME = 'apitest'
 # Enable reads (GET), inserts (POST) and DELETE for resources/collections
 # (if you omit this line, the API will default to ['GET'] and provide
 # read-only access to the endpoint).
-RESOURCE_METHODS = ['GET', 'POST', 'DELETE']
+RESOURCE_METHODS = ['GET', 'POST', 'DELETE','PATCH']
 
 # Enable reads (GET), edits (PATCH), replacements (PUT) and deletes of
 # individual items  (defaults to read-only item access).
@@ -92,7 +92,7 @@ firguns = {
     # GET requests at '/people/<lastname>'.
     'additional_lookup': {
         'url': 'regex("[\w]+")',
-        'field': 'description'
+        'field': 'username'
     },
 
     # We choose to override global cache-control directives for this resource.
@@ -116,7 +116,7 @@ users = {
     # GET requests at '/people/<lastname>'.
     'additional_lookup': {
         'url': 'regex("[\w]+")',
-        'field': 'description'
+        'field': 'username'
     },
 
     # We choose to override global cache-control directives for this resource.
@@ -124,7 +124,7 @@ users = {
     'cache_expires': 10,
 
     # most global settings can be overridden at resource level
-    'resource_methods': ['GET', 'POST', 'PATCH'],
+    'resource_methods': ['GET', 'POST'],
 
     'schema': schema2
 }
