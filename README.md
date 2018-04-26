@@ -12,4 +12,4 @@
 ### Requests
 Get all firguns by `curl http://127.0.0.1:5000/firguns` or the host address instead of `127.0.0.1`.
 ### Add Firgun
-Add new firgun by `curl -d '[{"category": ["eco"], "latitude": "23.4254", "longitude": "12.32423", "description": "Cool place!"}]' -H 'Content-Type: application/json'  http://127.0.0.1:5000/firguns`
+Add new firgun by `curl -d '[{"category": "eco", "latitude": "23.4254", "longitude": "12.32423", "description": "Cool place!"}]' -H 'Content-Type: application/json'  http://127.0.0.1:5000/firguns`
