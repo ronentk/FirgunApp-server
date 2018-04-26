@@ -54,7 +54,7 @@ schema1 = {
         'type': 'string',
         'minlength': 8,
         'maxlength':16,
-        'required': True,
+        'required': False,
         'unique': True,
     },
 }
