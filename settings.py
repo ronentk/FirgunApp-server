@@ -100,7 +100,7 @@ firguns = {
     'cache_expires': 10,
 
     # most global settings can be overridden at resource level
-    'resource_methods': ['GET', 'POST'],
+    'resource_methods': ['GET', 'POST', 'DELETE'],
 
     'schema': schema1
 }
@@ -124,7 +124,7 @@ users = {
     'cache_expires': 10,
 
     # most global settings can be overridden at resource level
-    'resource_methods': ['GET', 'POST'],
+    'resource_methods': ['GET', 'POST', 'DELETE', 'PATCH'],
 
     'schema': schema2
 }
