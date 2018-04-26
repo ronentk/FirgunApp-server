@@ -1,4 +1,5 @@
 # FirgunApp-server
+Based on the excellent http://python-eve.org
 
 ## Installation
 - Install py-eve using `pip install eve`
