@@ -9,4 +9,4 @@ Created on Thu Apr 26 12:51:28 2018
 from eve import Eve
 
 app = Eve()
-app.run()
+app.run(host='0.0.0.0')
