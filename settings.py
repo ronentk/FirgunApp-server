@@ -69,7 +69,7 @@ schema2 = {
         'unique': True,
     },
     'userpic':{
-        'type': 'media'
+        'type': 'string'
     },
     'firguns': {
         'type': 'list',
@@ -82,14 +82,7 @@ schema2 = {
         'type':'double',
         'required': True,
     },
-    # 'longitude':{
-    #     'type':'double',
-    #     'required': True,
-    # },
-    # 'latitude':{
-    #     'type':'double',
-    #     'required': True,
-    # },
+
 }
 
 firguns = {
