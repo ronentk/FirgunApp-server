@@ -44,7 +44,7 @@ schema1 = {
     'description': {
         'type': 'string',
         'minlength': 0,
-        'maxlength': 15,
+        'maxlength': 140,
         'required': False,
         'unique': False,
     },
