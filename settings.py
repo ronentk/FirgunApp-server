@@ -29,7 +29,8 @@ schema = {
 
     # 'category' is a list, and can only contain values from 'allowed'.
     'category': {
-        'type': 'list',
+        'type': 'string',
+        'required': True,
         'allowed': ["eco", "people", "sight"],
     },
     'longitude':{
@@ -51,10 +52,10 @@ schema = {
     },
 }
     
-people = {
+firguns = {
     # 'title' tag used in item links. Defaults to the resource title minus
     # the final, plural 's' (works fine in most cases but not for 'people')
-    'item_title': 'person',
+    'item_title': 'firgun',
 
     # by default the standard item entry point is defined as
     # '/people/<ObjectId>'. We leave it untouched, and we also enable an
@@ -62,7 +63,7 @@ people = {
     # GET requests at '/people/<lastname>'.
     'additional_lookup': {
         'url': 'regex("[\w]+")',
-        'field': 'lastname'
+        'field': 'description'
     },
 
     # We choose to override global cache-control directives for this resource.
@@ -77,5 +78,5 @@ people = {
 
     
 DOMAIN = {
-    'people': people,
+    'firguns': firguns,
 }
