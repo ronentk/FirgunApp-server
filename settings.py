@@ -34,11 +34,11 @@ schema1 = {
         'allowed': ["eco", "people", "sight"],
     },
     'longitude':{
-        'type':'string',
+        'type':'double',
         'required': True,
     },
     'latitude':{
-        'type':'string',
+        'type':'double',
         'required': True,
     },
     'description': {
@@ -71,14 +71,14 @@ schema2 = {
     'userpic':{
         'type': 'media'
     },
-    'longitude':{
-        'type':'string',
-        'required': True,
-    },
-    'latitude':{
-        'type':'string',
-        'required': True,
-    },
+    # 'longitude':{
+    #     'type':'double',
+    #     'required': True,
+    # },
+    # 'latitude':{
+    #     'type':'double',
+    #     'required': True,
+    # },
 }
 
 firguns = {
