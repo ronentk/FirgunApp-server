@@ -71,6 +71,17 @@ schema2 = {
     'userpic':{
         'type': 'media'
     },
+    'firguns': {
+        'type': 'list',
+    },
+    'longitude':{
+        'type':'double',
+        'required': True,
+    },
+    'latitude':{
+        'type':'double',
+        'required': True,
+    },
     # 'longitude':{
     #     'type':'double',
     #     'required': True,
@@ -108,7 +119,7 @@ firguns = {
 users = {
     # 'title' tag used in item links. Defaults to the resource title minus
     # the final, plural 's' (works fine in most cases but not for 'people')
-    'item_title': 'users',
+    'item_title': 'user',
 
     # by default the standard item entry point is defined as
     # '/people/<ObjectId>'. We leave it untouched, and we also enable an
@@ -124,7 +135,7 @@ users = {
     'cache_expires': 10,
 
     # most global settings can be overridden at resource level
-    'resource_methods': ['GET', 'POST', 'DELETE', 'PATCH'],
+    'resource_methods': ['GET', 'POST', 'DELETE'],
 
     'schema': schema2
 }
